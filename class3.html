@@ -129,8 +129,8 @@ for (var i = 100; i &lt;= 200; i++) {
         <!-- Arrays -->
           <section>
             <h3>Arrays</h3>
-            <img src="dist/img/kitten-group.jpg" alt="Group of kittens"/>
-            <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/pasotraspaso/4444291348/" target="_blank">Jesus Solana</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
+            <img src="dist/img/dogSledTeam.jpg" alt="Dog sled team"/>
+            <p class="credit">Photo credit: <a href="https://flic.kr/p/7Ev7cB" target="_blank">Tundra Ice</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">cc</a></p>
           </section>
 
           <section>
@@ -226,10 +226,10 @@ for (var i = 0; i &lt; rainbowColors.length; i++) {
 };
 </code></pre>
 <pre><code class="javascript">var user = {
-  hometown: 'Atlanta, GA',
-  hair: 'Auburn',
-  likes: ['knitting', 'code'],
-  birthday: {month: 10, day: 17}
+  eyeColor: 'Blue',
+  hair: 'Brown',
+  likes: ['writing', 'code'],
+  birthday: {month: 06, day: 16}
 };</code></pre>
         </section>
 
@@ -237,8 +237,8 @@ for (var i = 0; i &lt; rainbowColors.length; i++) {
           <h3>Accessing Objects</h3>
           <p>You can retrieve values using <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Dot_notation">dot notation</a></strong></p>
 <pre><code class="javascript">var user = {
-  hometown: 'Atlanta, GA',
-  hair: 'Auburn'
+  eyeColor: 'Blue',
+  hair: 'Brown'
 };
 
 var usersHometown = user.hometown;</code></pre><br>
@@ -250,8 +250,8 @@ var usersHometown = user.hometown;</code></pre><br>
           <h3>Changing Objects</h3>
           <p>You can use dot or bracket notation to change properties</p>
 <pre><code class="javascript">var user = {
-  hometown: 'Atlanta, GA',
-  hair: 'Auburn'
+  eyeColor: 'Blue',
+  hair: 'Brown'
 };
 
 user.hair = 'blue';</code></pre><br>
@@ -280,10 +280,10 @@ for (var i = 0; i &lt; users.length; i++) {
           <h3>Objects</h3>
           <p>Just like other data types, objects can be passed into functions:</p>
 <pre><code class="javascript">var jolene = {
-  age: 21,
-  hairColor: 'Auburn',
-  likes: ['pizza', 'tacos'],
-  birthday: {month: 3, day: 14, year: 1995}
+  age: 37,
+  hairColor: 'Brown',
+  likes: ['popcorn', 'ice cream'],
+  birthday: {month: 6, day: 16, year: 1979}
 }
 
 function describeUser(user) {
@@ -312,9 +312,9 @@ describeUser(jolene);</code></pre>
         <section>
           <h3>Object methods</h3>
           <p>Objects can also hold functions.</p>
-<pre><code class="javascript">var jolene = {
-  age: 21,
-  hairColor: 'Auburn',
+<pre><code class="javascript">var katy = {
+  age: 37,
+  hairColor: 'Brown',
   talk: function() {
     console.log('Hello!');
   },
@@ -324,9 +324,9 @@ describeUser(jolene);</code></pre>
 };
 </code></pre><br>
           <p>Call object methods using dot notation:</p>
-<pre><code class="javascript">jolene.talk();
+<pre><code class="javascript">katy.talk();
 
-jolene.eat('pizza');</code></pre>
+katy.eat('pizza');</code></pre>
         </section>
 
         <section>
@@ -340,14 +340,6 @@ jolene.eat('pizza');</code></pre>
           <h3>You did it!</h3>
           <img src="dist/img/fireworks.jpg" alt="Fireworks"/>
           <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/markwdw85/9425240584/" target="_blank">Mark W.</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-        </section>
-
-        <section>
-          <h3>Resources</h3>
-            <ul>
-              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-              <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Code Academy</a>, with interactive JavaScript lessons to help you review.</li>
-            </ul>
         </section>
 
         <section>

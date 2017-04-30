@@ -74,7 +74,7 @@
                 <li>Who are you?</li>
                 <li>What do you hope to get out of the class?</li>
                 <!-- Feel free to change the icebreaker question! -->
-                <li>What's your favorite ice cream flavor?</li>
+                <li>What's your favorite thing you've ever made?</li>
               </ul>
             </div>
         </section>
@@ -174,11 +174,10 @@
         <section>
           <h3>Let's Develop It</h3>
           <ul>
-            <li>Make a folder called <code>gdi</code>.</li>
-            <li>Inside, make a new page called <code>index.html</code>.</li>
-            <li>Write this code inside.</li>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+            <li>Go to <a href="https://codepen.io">https://codepen.io</a></li>
+            <li>Create a new pen</li>
+            <li>Write this code inside the HTML window.</li>
+<pre><code class="html">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Test Page&lt;/title&gt;
   &lt;/head&gt;
@@ -220,12 +219,6 @@
         </section>
 
         <section>
-          <h3>Example: Make a Sandwich</h3>
-          <iframe title="Sandwich video" width="560" height="315" src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" allowfullscreen></iframe>
-          <p class="credit">Source: <a>Harvard Students Making Sandwich: CS 50 Algorithm Intro</a></p>
-        </section>
-
-        <section>
           <h3>Basically, computers can be hard to work with!</h3>
           <img src="dist/img/computer-toddler.jpg" alt="Toddler using old word processor"/>
           <p class="credit">Photo credit: <a href="https://flic.kr/p/5Uvapm" target="_blank">Dan Hatton</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">cc</a></p>
@@ -262,15 +255,20 @@
         <section>
           <h3>Let's Develop It</h3>
           <ul>
-            <li>Open the console.</li>
-            <li>In Chrome, use the keyboard shortcut:
-              <ul>
-                <li>Mac: <strong>Command + Option + J</strong></li>
-                <li>Windows: <strong>Control + Shift + J</strong></li>
-              </ul>
-            <li>Open your practice page.</li>
+            <li>Open the console in CodePen (hint: it's in the bottom left corner).</li>
             <li>Do you see anything in the console?</li>
-            <li>Try typing in 2 + 2 and hitting enter.</li>
+            <li>You can also do this in your browser
+                <ul>
+                    <li>In Chrome, use the keyboard shortcut:
+                      <ul>
+                        <li>Mac: <strong>Command + Option + J</strong></li>
+                        <li>Windows: <strong>Control + Shift + J</strong></li>
+                      </ul>
+                    </li>
+
+              <li>Try typing in 2 + 2 and hitting enter.</li>
+            </ul>
+        </li>
           </ul>
         </section>
 
@@ -311,11 +309,10 @@ console.log('Hello World!'); // Or make short comments here</code></pre>
         <section>
           <h3>Let's Develop It</h3>
           <ul>
-            <li>Open <code>index.html</code>.</li>
+            <li>Go back to CodePen.</li>
             <li>Add a comment to the code.</li>
             <li>Try different ways of printing a message.</li>
-            <li>Create a new file called <code>mycode.js</code>.</li>
-            <li>Move your code to this file and link it to your page.</li>
+            <li>Move your code (the stuff inside your <code>script</code> tags) to the JS or JavaScript window.</li>
           </ul>
         </section>
 
@@ -332,9 +329,9 @@ console.log('Hello World!'); // Or make short comments here</code></pre>
         <section>
           <h3>Declaring a Variable</h3>
           <p>To declare (create) a variable, just type the word <code>var</code> and the variable name.</p>
-<pre><code class="javascript">var numberOfKittens;</code></pre>
+<pre><code class="javascript">var numberOfPuppies;</code></pre>
           <p>It is a good idea to give your variable a starting value. This is called initializing the variable.</p>
-<pre><code class="javascript">var numberOfKittens = 5;</code></pre>
+<pre><code class="javascript">var numberOfPuppies = 5;</code></pre>
         </section>
 
         <section>
@@ -361,8 +358,8 @@ console.log('Hello World!'); // Or make short comments here</code></pre>
         <section>
           <h3>Using a Variable</h3>
           <p>Once you have created a variable, you can use it in your code. Just type the name of the variable.</p>
-<pre><code class="javascript">var numberOfKittens = 5;
-console.log(numberOfKittens);
+<pre><code class="javascript">var numberOfPuppies = 5;
+console.log(numberOfPuppies);
 </code></pre>
         </section>
 
@@ -396,16 +393,16 @@ console.log(numberOfKittens);
       <!-- Numbers-->
         <section>
           <h3>Numbers!</h3>
-          <img src="dist/img/kitten-basket.jpg" alt="Cats in a basket"/>
+          <img src="dist/img/puppies.jpg" alt="Two puppies looking cute"/>
           <p class="credit">
-            <small>Photo credit: <a href="http://www.flickr.com/photos/tom-poes/2159348460/" target="_blank">WJ van den Eijkhof</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></small>
+            <small>Photo credit: <a href="https://www.flickr.com/photos/29825916@N05/5760905069/" target="_blank">Hedgehog Fibres</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">cc</a></small>
           </p>
         </section>
 
         <section>
           <h3>Numbers</h3>
           <p>Variables can be numbers, either integers or floats (decimals).</p>
-<pre><code class="javascript">var numberOfKittens = 5;
+<pre><code class="javascript">var numberOfPuppies = 5;
 var cutenessRating = 9.6;
 </code></pre>
           <p>JavaScript automatically converts integers to floats</p>
@@ -415,8 +412,8 @@ var cutenessRating = 9.6;
         <section>
           <h3>Arithmetic Operators</h3>
           <p>Once you have numbers, you can do math with them!</p>
-<pre><code class="javascript">var numberOfKittens = 5;
-var numberOfPuppies = 4;
+<pre><code class="javascript">var numberOfPuppies = 5;
+var numberOfKittens = 4;
 var numberOfAnimals = numberOfKittens + numberOfPuppies;
 </code></pre>
         </section>
@@ -476,35 +473,37 @@ var numberOfAnimals = numberOfKittens + numberOfPuppies;
         <section>
           <h3>Strings</h3>
           <p>Variables can be strings (groups of characters). You put your string in single or double quotes.</p>
-<pre><code class="javascript">var kittensName = 'Fluffy';</code></pre>
+<pre><code class="javascript">var puppyName = 'Casey';</code></pre>
           <p>If you want to use a quote in your string, you'll need to <b>escape</b> it with a backslash.</p>
 <pre><code class="javascript">console.log('I\'d like to use an apostrophe');</code></pre>
+            <img src="dist/img/casey.jpg" alt="My dog Casey smiling"/>
         </section>
 
         <section>
           <h3>Playing with Strings</h3>
-          <img src="dist/img/kitten-string.jpg" alt="Cat playing with string"/>
+          <img src="dist/img/dogWithString.jpg" alt="Dog playing with string"/>
           <p class="credit">
-            <small>Photo credit: <a href="http://www.flickr.com/photos/dirtbikedba/5796961878/" target="_blank">Mike Lawson</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></small>
+            <small>Photo credit: <a href="https://flic.kr/p/kuN7v" target="_blank">Richard Kelland</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">cc</a></small>
           </p>
         </section>
 
         <section>
           <h3>String Operators</h3>
           <p>You can put strings together with a <code>+</code>, the concatenation operator.</p>
-          <pre><code class="javascript">var kittensName = 'Fluffy ';
-var fullName = kittensName + 'McDougle';
-console.log(fullName); // Outputs 'Fluffy McDougle'
+          <pre><code class="javascript">var puppyName = 'Casey ';
+var fullName = puppyName + 'Bowman';
+console.log(fullName); // Outputs 'Casey Bowman'
 </code></pre>
         </section>
 
         <section>
           <h3>String Operators</h3>
           <p>You can also use <code>+=</code> to add things to the end of a string.</p>
-<pre><code class="javascript">var kittensName = 'Admiral ';
-kittensName += 'Snuggles';
-console.log(kittensName); // Outputs 'Admiral Snuggles'
+<pre><code class="javascript">var puppyName = 'Harper ';
+puppyName += 'Lee';
+console.log(puppyName); // Outputs 'Harper Lee'
 </code></pre>
+<img src="dist/img/harper.jpg" alt="My dog Harper Lee watching me code">
         </section>
 
         <section>

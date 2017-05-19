@@ -540,6 +540,90 @@ submitButton.addEventListener("click", function(event) {
           </ul>
         </section>
 
+        <!-- ES6 stuff -->
+        <section>
+            <h2>Intro to ES6</h2>
+        </section>
+
+        <section>
+            <h3>Variables</h3>
+            <p>ES6 gives us a couple of different options for variables</p>
+            <ul>
+                <li><strong>const</strong>: Used when you don't want a variable to change</li>
+                <li><strong>let</strong>: Used when you might be re-using variable names</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>const</h3>
+            <pre><code class="javascript">const numberOfKittens = 0;
+var numberOfPuppies = 0;
+
+function addPuppies(numberOfNewPuppies) {
+    numberOfPuppies += numberOfNewPuppies;
+    return numberOfPuppies;
+}
+
+function addKittens(numberOfNewKittens) {
+    numberOfKittens += numberOfNewKittens;
+    return numberOfKittens;
+}
+
+function addTwoOfEach {
+    addPuppies(2);
+    addKittens(2);
+    document.write('I now have ' + numberOfPuppies + ' puppies and ' + numberOfKittens + ' kittens.');
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>let</h3>
+            <pre><code class="javascript">let myFavoriteThings = [
+'dogs',
+'books',
+'code'
+];
+
+function newFavoriteThings() {
+    let myFavoriteThings = [
+    'food',
+    'food',
+    'more food'
+    ];
+    document.write(myFavoriteThings); //would print ['food', 'food', 'more food']
+}
+
+document.write(myFavoriteThings); //would print ['dogs', 'books', 'code']
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Template literals!</h3>
+            <p>Template literals are a super easy way to format output!</p>
+            <p>This:</p>
+            <pre><code class="javascript">var numberOfDogs = 6;
+    document.write('I have ' + numberOfDogs + ' dogs!');
+            </code></pre>
+            <p>Becomes this:</p>
+            <pre><code class="javascript">var numberOfDogs = 6;
+    document.write(`I have ${numberOfDogs} dogs!`);
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>How does this work?</h3>
+            <p>Just like a document template, you leave spaces for things you expect people to fill in.</p>
+            <ul>
+                <li>surround your text in backticks instead of single quotes</li>
+                <li>surround your variables in ${}</li>
+            </ul>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+        </section>
+
     </div>
       <footer>
         <div class="copyright">

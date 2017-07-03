@@ -2,9 +2,9 @@
 
 Slides and materials are hosted at [http://girldevelopit.github.io/gdi-intro-database-design/](http://girldevelopit.github.io/gdi-intro-database-design).
 
-This is the Girl Develop It Intro Databases course. Material created by Annye Driscoll and based in part on older GDI classes.
+This is the Girl Develop It Intro Databases course. Material was created by Annye Driscoll in the summer of 2017 and is based in part on older GDI classes.
 
-The course is meant to be taught in 1 two-hour sections. Each of the slides are customizable according to the needs of a given class or audience.
+The course is meant to be taught in 1 two-hour class. Each of the slides are customizable according to the needs of a given class or audience.
 
 ## Course description
 Database design is the science (and art) of storing and retrieving data.  As anyone who has tried to analyze data using Excel can attest, it is not as simple as it might seem.   

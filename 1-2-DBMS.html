@@ -69,14 +69,14 @@
             <li>MySQL</li>
             <li>Microsoft Access</li>
           </ul>
-          <!-- Access is not generally considered an industrial-strength, "professional" DBMS, but it definitely has its strengths.
+          <aside class="notes">Access is not generally considered an industrial-strength, "professional" DBMS, but it definitely has its strengths.
           For one, it is part of Microsoft Office, so it has a UI we can all use intuitively. You may not see Access at somewhere
           like Sparkbox or a big enterprise, but a lot of small places, somewhere like a small business or a school at a university,
           would have good reason to use Access.
 
           By the way -you’re going to see the three letters “SQL” quite a bit in this class. How is it pronounced?
           SQL was originally called SEQUAL, but of course now it’s obviously spelled SQL, but seuql is easier to say.
-          It’s a whole thing that shouldn’t be a thing, I recommend using whatever your boss uses and then you’ll be safe. -->
+          It’s a whole thing that shouldn’t be a thing, I recommend using whatever your boss uses and then you’ll be safe. </aside>
         </section>
 
         <section>
@@ -96,7 +96,7 @@
         <section>
           <h3>Levels of Data</h3>
           <p>Three views provided by the DBMS</p>
-          <!-- When I say views here I don’t mean the stored query we just learned about - I mean it’s literally a way to see the database. -->
+          <aside class="notes"> When I say views here I don’t mean the stored query we just learned about - I mean it’s literally a way to see the database. </aside>
           <ul>
             <li>External level
               <ul>
@@ -123,14 +123,14 @@
         <section>
           <h3>Data Independence</h3>
           <p>Changes made at one level do not affect a view at another level.</p>
-          <!-- So, for example, an end user can change their external view and it doesn’t affect a database application developer’s code at the conceptual level! -->
+          <aside class="notes">So, for example, an end user can change their external view and it doesn’t affect a database application developer’s code at the conceptual level!</aside>
           <p>Independence hides the details of the storage structure from user applications.</p>
           <br />
           <ul>
             <li><b>Physical independence</b> = ability to modify the physical schema without causing application programs to be rewritten. </li>
-            <!-- So you can make physical changes to the database, for optimization for example, without changing the application-->
+            <aside class="notes">So you can make physical changes to the database, for optimization for example, without changing the application</aside>
             <li><b>Logical independence</b> = ability to modify the logical schema without causing application programs to be rewritten.</li>
-            <!-- If we add some new columns or remove some columns from a table then the user view and programs should not change.-->
+            <aside class="notes">If we add some new columns or remove some columns from a table then the user view and programs should not change.</aside>
           </ul>
         </section>
 

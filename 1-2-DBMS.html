@@ -73,7 +73,7 @@
           For one, it is part of Microsoft Office, so it has a UI we can all use intuitively. You may not see Access at somewhere
           like Sparkbox or a big enterprise, but a lot of small places, somewhere like a small business or a school at a university,
           would have good reason to use Access.
-<br / >
+
           By the way -you’re going to see the three letters “SQL” quite a bit in this class. How is it pronounced?
           SQL was originally called SEQUAL, but of course now it’s obviously spelled SQL, but seuql is easier to say.
           It’s a whole thing that shouldn’t be a thing, I recommend using whatever your boss uses and then you’ll be safe. </aside>
@@ -137,15 +137,15 @@
         <section>
           <h3>Storage</h3>
           <p>The internal level of the database architecture + metadata and data structures.</p>
-          <!-- includes schemas, tables, queries, views, etc. -->
+          <aside class="notes">includes schemas, tables, queries, views, etc.</aside>
           <p>Serious optimization happens at the storage/internal level of the database so that the database is fast and efficient when data is requested.</p>
           <br />
           <ul>
             <li><b>Database engine</b> = underlying software a DBMS uses to manipulate the data.</li>
-            <!-- DBMS allows access to the engine through the UI or possibly through an API so that humans can hit it. -->
+            <aside class="notes">DBMS allows access to the engine through the UI or possibly through an API so that humans can hit it.</aside>
             <li><b>Database replication</b> = replicating data in order to increase availability and resiliency.</li>
-            <!-- Availability = more people can access the same piece of data with good performance
-                 Resiliency = data is backed up in case of a failure -->
+            <aside class="notes">Availability = more people can access the same piece of data with good performance
+                 Resiliency = data is backed up in case of a failure</aside>
           </ul>
         </section>
 
@@ -154,8 +154,8 @@
           <p>Ensuring valid data.</p>
           <ul>
             <li><b>Data types</b> ensure that, for example, date fields only store date values.</li>
-            <!--So just like we can give a variable a datatype in programming and only values of that datatype are allowed ot be saved there,
-            we can give a field in a database a type and the DBMS will control that. -->
+            <aside class="notes">So just like we can give a variable a datatype in programming and only values of that datatype are allowed ot be saved there,
+            we can give a field in a database a type and the DBMS will control that.</aside>
             <li>Constraints and triggers allow for complex rules to be applied
               <ul>
                 <li><b>Constraint</b> = limit the type of data that can go in a table, ensuring accuracy and reliability.
@@ -165,9 +165,134 @@
                   </ul>
                 </li>
                 <li><b>Trigger</b> = action (code) that is run automatically in response to a certain event.</li>
+                <aside class="notes">Examples of triggers: every time a new employee is added, create entries for that person in the tax and benefits table.
+                  Or before a customer is deleted, confirm they do not have an outstanding order, and prevent the deletion if so.</aside>
               </ul>
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h3>Data Consistency</h3>
+          <p>Ensuring the database is in a valid state.</p>
+          <ul>
+            <li>Record locks prevent “dirty” reads or writes.
+              <ul>
+                <li><b>Record locking</b> = preventing simultaneous access to data.</li>
+                <aside class="notes">Perfect example of dirty read/write is 2 bank clerks trying to modify 1 bank account. The 1st clerk makes a quick update and saves it.
+                  Then the 2nd clerk makes their update and saves it, effectively erasing the first transaction entirely. The solution is to lock the record after the first
+                  person retrieves the data, then unlock it once that change is saved.</aside>
+              </ul>
+            </li>
+            <li><b>Commit and rollback</b> mechanisms ensure transactions are either fully completed or fully rolled back.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Performance</h3>
+          <p>Fine-grained record locking prevents queries from blocking others.</p>
+          <ul>
+            <li>Indexes speed up lookups and joins by magnitudes.
+              <ul>
+                <li><b>Index</b> = data structure that improves the speed of data retrieval at the cost of additional writes and storage space to maintain the index data structure.</li>
+              </ul>
+            </li>
+            <li>Query optimizers find the fastest way to execute your query.</li>
+              <ul>
+                <li><b>Query optimizer</b> = determine the most efficient way to execute a given query internally.</li>
+              </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Security</h3>
+          <p>People or code may be restricted in what database objects they can control or which computations they can make</p>
+          <ul>
+            <li><b>Multi-tiered security</b> allows restrictions at the server level, database level, column level, role level, and user level.</li>
+            <li>Databases also often have change and access logs - what was changed, when it was changed, and by whom it was changed.</li>
+            <li>Can use <b>database transactions</b> to increase security.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Backup and Recovery</h3>
+          <p>Use tools for backup and recovery! Log files make it possible.</p>
+          <ul>
+            <li><b>Database mirroring</b> = creation and maintenance of redundant copies of a database. Ensures continuous availability.</li>
+            <li><b>Failover clustering</b> = creation and maintenance of groups of servers that work in the same way to ensure high availability of data.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>And some other DBMS features...</h3>
+          <ul>
+            <li><b>Materialized view</b> = saved result of a frequently needed query.</li>
+            <aside class="notes">Materialized view = view but data is saved and only updated periodically. So can be older data, but is available instantly.</aside>
+            <li><b>Migration</b> = moving a database from one DBMS to another. Typically a DBMS will include import tools.</li>
+            <li>Graphics component for producing graphs and charts</li>
+            <li>Tools for design, programming, maintenance, performance analysis, configuration, etc.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Transaction</h3>
+          <p>1 unit of work performed within a DBMS against a database. </p>
+          <ol>
+            <li>They provide reliable units of work to allow a recovery from a failure.</li>
+            <li>They provide isolation between programs hitting a database at the same time.</li>
+          </ol>
+          <p>Transactions are <b>ACID</b>!
+          <aside class="notes">Transactions can be used to increase a lot of the elements of a database we've already talked about - security, data integrity, data consistency, etc..</aside>
+        </section>
+
+        <section>
+          <h3>ACID</h3>
+          <p><b>A</b>tomicity = a transaction must be all or nothing. If one part of a transaction fails, it all fails and the database is left unchanged.</p>
+          <p><b>C</b>onsistency = any transaction will bring the database from one valid state to another; invalid data causes transactions to roll back. Any data must align with all constraints and triggers.</p>
+          <p><b>I</b>solation = concurrent transactions result in the same state as sequential transactions; all transactions are independent! </p>
+          <p><b>D</b>urability = once a transaction is complete, it is permanent - even if the system fails (power loss, crash, etc.).</p>
+          <aside class="notes">These definitions are dense, but the concepts are super easy to describe with simple examples.</aside>
+        </section>
+
+        <section>
+          <h3>ACID</h3>
+          <p>Imagine moving $100 from your checking account to your savings account.</p>
+          <ol>
+            <li>Confirm the accounts are valid.</li>
+            <li>Confirm the checking account has available funds.</li>
+            <li>Debit the checking account $100.</li>
+            <li>Credit the savings account $100.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>ACID - Atomicity</h3>
+          <p>Case 1: The building loses power between debiting checkings and crediting savings.</p>
+          <p>Because the transaction was not fully committed, <b>atomicity</b> ensures that the transaction is rolled back. </p>
+          <p>(This is <b>commit and rollback</b>!)</p>
+          <aside class="notes">Remember atomicity says that a transaction must be all or nothing. If one part of a transaction fails, it all fails and the database is left unchanged.</aside>
+        </section>
+
+        <section>
+          <h3>ACID - Consistency</h3>
+          <p>Case 2: Memory corruption causes a credit savings by $1,000,000 instead of $100.</p>
+          <p>Because the transaction leaves the system in an inconsistent state, <b>consistency</b> will ensure that the transaction is rolled back (sorry!).</p>
+          <aside class="notes">Remember consistency is that any transaction will bring the database from one valid state to another; invalid data causes transactions to roll back.</aside>
+        </section>
+
+        <section>
+          <h3>ACID - Isolation</h3>
+          <p>Case 3: At the same time that you transfer funds, your utility cashes a check that brings your checking balance to $50.</p>
+          <p><b>Isolation</b> ensures that either the utility clears before your transaction (meaning your transaction will be rejected) or your transaction finishes first (meaning the utility check will bounce).</p>
+          <p>(This is <b>record locking</b>!)</p>
+          <aside class="notes">Remember isolation means all transactions are independent.</aside>
+        </section>
+
+        <section>
+          <h3>ACID - Durability</h3>
+          <p>Case 4: The building loses power right after your transaction completes.</p>
+          <p><b>Durability</b> ensures that the transaction is permanent.</p>
+          <aside class="notes">Remember durability means once a transaction is complete, it is permanent.</aside>
         </section>
 
     </div>

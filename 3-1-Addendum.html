@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Part 3: Addendum - Girl Develop It</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --> <link rel="stylesheet" href="dist/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css">-->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'dist/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Database Careers</h2>
+        </section>
+
+        <section>
+          <h3>Database Administrator (DBA)</h3>
+          <p>Takes care of the database itself!</p>
+          <ul>
+            <li>Upgrades the server and application tools</li>
+            <li>Manages backups and restores</li>
+            <li>Manages database availability</li>
+            <li>Takes care of partitioning</li>
+            <li>Manages security</li>
+            <li>Manages performance</li>
+            <li>Troubleshoots</li>
+          </ul>
+          <br /><br />
+          <p>(CS education with a focus on database administration or MIS)</p>
+          <aside class="notes">This is the person called when the DB is down at 4AM on a weekend.
+            MIS = Management Information Systems</aside>
+        </section>
+
+        <section>
+          <h3>Database Developer</h3>
+          <p>Software developer who specializes in databases.</p>
+          <ul>
+            <li>Writes queries</li>
+            <li>Scripts schema changes</li>
+            <li>Creates stored procedures</li>
+            <li>Creates triggers and constraints</li>
+            <li>Designs the database</li>
+            <li>Also works on performance and security</li>
+          </ul>
+          <br /><br />
+          <p>(CS education)</p>
+          <aside class="notes">If the administrator is the maintenance and protection of the database, the developer is the improvements and the functionality.</aside>
+        </section>
+
+        <section>
+          <h3>BI Analyst</h3>
+          <p>Writes custom queries and reports, including data visualization.</p>
+          <ul>
+            <li>May be more of a report writer or business analyst or may be more of a developer, building solutions</li>
+            <li>SQL language experts</li>
+            <li>Collects data for the business</li>
+            <li>May work with SSRS, Crystal Reports, Tableau/Power BI, Microsoft Access</li>
+          </ul>
+          <br /><br />
+          <p>(CS or BA education depending on focus and job role)</p>
+          <aside class="notes">BI analyst may work within the DBMS if their DBMS has the desired tools included, or they may use external tool like tableau.</aside>
+        </section>
+
+        <section>
+          <h3>Database Consultant</h3>
+          <p>Specialist DBAs or developers; experts in the field.</p>
+          <ul>
+            <li>Tunes performance</li>
+            <li>Enhances security</li>
+            <li>Improves availability</li>
+            <li>Implements/migrates to cloud systems</li>
+          </ul>
+          <br /><br />
+          <p>(Lots of experience and skill in their chosen specialty)</p>
+          <aside class="notes">
+            performance = finding bottlenecks
+            security = encryption
+            availability = mirroring and fail-over clustering
+            Implements features that may not be considered standard.
+            May be more like a DBA or may be more like a developer, but either way they’re brought in to solve problems or improve the system.</aside>
+        </section>
+
+        <section>
+          <h3>Data Scientist</h3>
+          <p>Specialize in creating data models.</p>
+          <ul>
+            <li>Taking large amounts of data and turning it into usable insights</li>
+            <li>Creates predictive modeling (using statistics to predict outcomes)</li>
+            <li>Use dashboards with current data, as opposed to a statistician’s report</li>
+          </ul>
+          <br /><br />
+          <p>((Math and statistics with an understanding of CS)</p>
+          <aside class="notes">
+            Predictive modeling is often used in customer relationship modeling - what coupons will work on a customer, what products a customer may like.
+            Also used in things like auto insurance to determine risk.</aside>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          <p>Basics: https://en.wikipedia.org/wiki/Database</p>
+          <p>SQL: https://www.w3schools.com/</p>
+          <p>DBMS usually either have a free version (SQL Server Management Studio, Oracle) or are open source (MySQL, PostgreSQL).</p>
+          <p>You can also find free data sources on the internet - Microsoft has sample databases, Kaggle.com has datasets.</p>
+        </section>
+
+        <section>
+          <h2>You did it!</h2>
+          <img alt="Happy cat" src="dist/img/Happy_Cat.jpg" />
+        </section>
+
+    </div>
+    <footer>
+      <div class="copyright">
+        Intro to Database Design &mdash; Girl Develop It &mdash;
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+  </div>
+
+    <script src="dist/js/head.min.js"></script>
+    <script src="dist/js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>

@@ -172,6 +172,245 @@
             so that we have a field to match on. We have to be intentional with our relationships.</aside>
         </section>
 
+        <section>
+          <h3>Primary Key</h3>
+          <p>What is Pets &#10781 Owners on Owner First = Owner First?</p>
+          <img alt="Pets and Owners joined on Owner First" src="dist/img/JoinedOnOwnerFirst.JPG" />
+        </section>
+
+        <section>
+          <h3>Primary Key</h3>
+          <ul>
+            <li>A field (or set of fields) that uniquely identify rows.</li>
+            <li>The minimal set of fields upon which the row is <b>functionally dependent</b>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Primary Key - Functional Dependency</h3>
+          <p>Let A and B be sets of fields in a table.</p>
+          <p>A functional dependency exists (A → B) if for every field[A] in the table we get back row[B].</p>
+          <aside class="notes">Now we know the definition of functional dependency but we still don't know what it is.</aside>
+        </section>
+
+        <section>
+          <h3>Functional Dependency</h3>
+          <h2>need to to evaluate these examples for accuracy</h2>
+          <img alt="A small functionally dependent example" src="dist/img/FunctionalDependency1.JPG" />
+          <p>Let A = (Owner First), B = (Owner Last). Can we say A → B?</p>
+          <aside class="notes">Yes, in this small dataset.</aside>
+        </section>
+
+        <section>
+          <h3>Functional Dependency</h3>
+          <img alt="A small functionally independent example" src="dist/img/FunctionalDependency2.JPG" />
+          <p>Let A = (Owner First), B = (Owner Last). Can we say A → B?</p>
+          <aside class="notes">No.</aside>
+        </section>
+
+        <section>
+          <h3>Functional Dependency</h3>
+          <img alt="Pet DB functional dependency" src="dist/img/PetDBFunctionalDependency.JPG" />
+          <p>Let A = (Owner First, Pet Name), B = (rest of pet facts). Can we say A → B?</p>
+          <aside class="notes">Yes, so we can use the combination of owner first and pet name to look up all of the pet facts.</aside>
+        </section>
+
+        <section>
+          <h3>Primary Key Candidate</h3>
+          <img alt="Pet DB functional dependency" src="dist/img/PetDBFunctionalDependency.JPG" />
+          <p>Every time I see a particular Owner First + Pet Name, I expect to get back the same Pet Birthday, Pet Color, and Pet Skill.</p>
+          <p>Does the reverse hold true?</p>
+          <aside class="notes">No, functional dependency is a one-way street. Pets could have identical birthdays, colors, and skills, but
+            have a different name and/or owner. The same person having two identical pets, including name, is not a valid business case in this situation.</aside>
+        </section>
+
+        <section>
+          <h3>Primary Key</h3>
+          <ul>
+            <li>The PK must be unique within the table.</li>
+            <li>Only one PK is allowed per table.</li>
+            <li>The PK is automatically indexed (for fast lookup!).</li>
+          </ul>
+          <aside class="notes">So you may set something like an SSN or an Order Number may make a good key. HOWEVER (and this is where we return to the Pet DB)</aside>
+        </section>
+
+        <section>
+          <h3>Primary Key Candidate</h3>
+          <img alt="Names not working for PK" src="dist/img/NamesNotGoodKeys.JPG" />
+          <p>PKs must be unique within the table - for this reason, names make poor PKs.</p>
+          <aside class="notes">It’s easy to see how a in a table like this, it may be tough or impossible to find a foreign key.</aside>
+        </section>
+
+        <section>
+          <h3>Primary Key Candidate</h3>
+          <img alt="ID field added to Owner table" src="dist/img/AddingIDField.JPG" />
+          <p>For this reason, you’ll usually see a unique ID field used as a PK.</p>
+        </section>
+
+        <section>
+          <h3>Primary Key</h3>
+          <p>Primary keys are often “ID” fields in all tables.</p>
+          <ul>
+            <li>This is partly done for convenience
+              <ul><li>ID fields are often autoincrement fields</li></ul>
+            </li>
+            <li>Remember PKs are automatically indexed, and numbers are faster to increment.</li>
+            <li>Other tables may refer back to another table’s PK, and it’s easier and faster to bring in one column instead of multiple.</li>
+          </ul>
+          <aside class="notes">Also - having only one column as the PK is significantly faster than having two like we had in the Pets table.</aside>
+        </section>
+
+        <section>
+          <h3>Primary Key</h3>
+          <img alt="ID field added to pets table" src="dist/img/PKAddedToPets.JPG" />
+          <aside class="notes">We already added our PK to the owner table - here it is added to the Pets table. Now, instead of Owner First + Pet Name
+            being the only way to identify records, we have a column we know will always be unique.</aside>
+        </section>
+
+        <section>
+          <h3>Foreign Key</h3>
+          <p>= a field (or set of fields) that is a PK in some other table.</p>
+          <ul>
+            <li>There can be multiple FKs in a table</li>
+            <li>FKs are how you designate that tables are related.</li>
+          </ul>
+          <aside class="notes">So you remember about 60 slides ago when we were joining Pets and Owners on Owner first? And I said remember
+            this spot because we're going to come back to it after we learn about keys?</aside>
+        </section>
+
+        <section>
+          <h3>Foreign Key</h3>
+          <img alt="Tables not yet formally connected" src="dist/img/DisconnectedTables.JPG" />
+          <p>These tables are not yet formally connected in any way!</p>
+          <aside class="notes">These tables are connected on Owner First, but we know Owner First could very easily be duplicated in
+            the Owners table, so it isn’t unique in any way. Also, since it’s not a key in Owners, it’s not a Foreign Key.</aside>
+        </section>
+
+        <section>
+          <h3>Foreign Key</h3>
+          <img alt="Tables connected by a FK" src="dist/img/AddFKToPets.JPG" />
+          <p>These tables are now related!</p>
+          <aside class="notes">If we replace Owner First with Owner_Id, we’ve created a link between the two tables which is indisputable. It’s a foreign key!</aside>
+        </section>
+
+        <section>
+          <h3>Add households activity here (add PK and FK)</h3>
+        </section>
+
+        <section>
+          <h3>Referential Integrity</h3>
+          <p>A database has <b>referential integrity</b> if rules are in place that ensure that a FK can never point to a row that doesn’t exist.</p>
+        </section>
+
+        <section>
+          <h3>Foreign Key</h3>
+          <img alt="Row is deleted, so we now have orphan rows" src="dist/img/OrphanRows.JPG" />
+          <p>Pet_IDs 3 and 5 have become orphan rows :(</p>
+          <aside class="notes">If something happens to the second owner, what will happen to the 3rd and 4th pets? There are two ways to deal with the illegal
+            action of deleting the second owner.</aside>
+        </section>
+
+        <section>
+          <h3>Referential Constraints</h3>
+          <p><b>Cascade</b> = cascade changes in PK to all referencing FKs.</p>
+          <br /><br />
+          <p><b>Restrict</b> (or <b>no action</b>) = don’t allow changes to PK if there is a referencing FK.</p>
+          <aside class="notes">So if we set our preferences to cascade deletions, when we deleted the second owner we would also delete the third and fifth pets.
+            If we set our preferences to restrict deletions, when we attempt to delete the second owner we would get an error.
+            This doesn’t just apply to deletions - the same would happen, depending on our chosen constraint, if we for example changed the value of the PK.
+            So if we chose cascade and then changed the second Owner’s PK to 3, that change would cascade through the Pet table and change the third and fifth pet’s
+            owner FK to 3.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Indexes</h3>
+          <p>= a special data structure that speeds up data retrieval.</p>
+          <br /><br />
+          <p>Consider the task of trying to find all references to an “Anna” character in War and Peace.</p>
+          <aside class="notes">You may remember that we learned that PKs are automatically indexed, and then didn’t really talk about what an index is.
+            If all we have is the novel, we basically just have to read or scan the entire massive novel. However, if the novel had an index, we can look
+            Anna up in the index and then go directly to the pages she’s on. An index on a field in a database works in a similar way, using a special data structure
+            called a b-tree.
+            Back to PKs being automatically indexed - when keys are indexed it makes joining two or more tables vastly faster.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Indexes</h3>
+          <ul>
+            <li>Indexes slow down writes</li>
+            <li>Too many indexes can slow down queries</li>
+          </ul>
+          <p>So it’s a tradeoff! </p>
+          <aside class="notes">So why don’t we just index every field, since they vastly improve performance?</aside>
+        </section>
+
+        <section>
+          <h3>Indexes</h3>
+          <p>What fields should be indexed?</p>
+          <ul>
+            <li>PKs are automatically indexed.</li>
+            <li>FKs, especially if you enforce referential integrity</li>
+            <li>Fields which will be queried over and over
+              <ul>
+                <li>Name fields</li>
+                <li>Phone number, if your system looks people up by phone</li>
+                <li>State, if producing mass mailings by state</li>
+              </ul>
+            </li>
+          </ul>
+          <aside class="notes">Remember referential integrity means that rules are in place that ensure that a FK can never point to a row that doesn’t exist.
+            So really beyond the keys, it’s up to you or your business rules to determine which fields should be indexed.</aside>
+        </section>
+
+        <section>
+          <h2>Okay, I know about 500 vocab words...now how do it start??</h2>
+        </section>
+
+        <section>
+          <h3>Designing a Database</h3>
+          <p>1. Produce a conceptual data model</p>
+          <ul>
+            <li>Reflects the possible state of the external system being modeled.
+              <ul>
+                <li>Can a person have more than 1 phone number?</li>
+                <li>Can a customer also be a supplier?</li>
+              </ul>
+            </li>
+            <li>Establish definitions of the terminology used for entities (customers, products, cats) and their relationships and attributes.</li>
+          </ul>
+          <aside class="notes">Entity-relationship model = captures relationships, but isn’t directly tied to the physical structure of the database.</aside>
+        </section>
+
+        <section>
+          <h3>Designing a Database</h3>
+          <p>2. Translate the data model into a schema</p>
+          <ul>
+            <li>Often called logical database design; output is a logical data model.</li>
+            <li>The logical data model is specific to the chosen database model and DBMS - we’re getting real and technical, at this point.</li>
+          </ul>
+          <aside class="notes">NEED MORE DETAIL HERE</aside>
+        </section>
+
+        <section>
+          <h3>Designing a Database</h3>
+          <p>3. Design the physical database</p>
+          <ul>
+            <li>Make decisions that affect performance, scalability, recovery, security, etc.</li>
+          </ul>
+        </section>
+
+        <section>
+          <img alt="Then draw the rest of the owl meme" src="dist/img/DrawTheOwl.jpg" />
+        </section>
+
+        <section>
+          <h2><a href="index.html">Questions?</a></h2>
+          <aside class="notes">We've now covered all of the technical content of the course, and I'd like to just go over a couple
+          additional items before we wrap up, cool?</aside>
+        </section>
+
     </div>
     <footer>
       <div class="copyright">

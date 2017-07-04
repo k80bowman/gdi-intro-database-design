@@ -47,79 +47,40 @@
       <div class="slides">
 
         <section>
-          <h3>Gotta pick a model</h3>
-          <p>The model determines the logical structure of the database and decides the way data can be stored, organized, and manipulated.</p>
-        </section>
-
-        <section>
-          <h3>Some models...</h3>
-          <p><b>Flat model</b> (aka spreadsheet) = precursor to the relational model.</p>
-          <img alt="Image of a flat file database" src="dist/img/Flat_File_Model.jpg" />
+          <h3>Popularity winner</h3>
+          <p><b>Relational database</b> = organizes data into one or more tables of columns and rows with a unique key identifying each row (record).</p>
+          <img alt="Image of an ER model" src="dist/img/Relational_database.svg.png" />
           <p>
             <small class="credit">
-              Photo credit: Wikimedia
-            </small>
-          </p>
-          <aside class="notes"> Good for small datasets, but since you have to traverse the whole dataset to find a piece of data, it’s very inefficient </aside>
-        </section>
-
-        <section>
-          <h3>Some models...</h3>
-          <p><b>Hierarchical model</b> = tree-like structure; siblings are in a particular order; one to many relationships.</p>
-          <img alt="Image of a heirarchical model" src="dist/img/Heirarchical_Model.jpg" />
-          <p>
-            <small class="credit">
-              Photo credit: Ludichart
-            </small>
-          </p>
-          <aside class="notes"> Good for describing real-world relationships.
-            Still used today - you may know it as an XML document.
-          </aside>
-        </section>
-
-        <section>
-          <h3>Some models...</h3>
-          <p><b>Network model</b> = builds on the hierarchical model because it allows many-to-many relationships.</p>
-          <img alt="Image of a network model" src="dist/img/Network_Model.jpg" />
-          <p>
-            <small class="credit">
-              Photo credit: Ludichart
+              Photo credit: Wikpmedia
             </small>
           </p>
         </section>
 
         <section>
-          <h3>Some models...</h3>
-          <p><b>Graph model</b> = builds on the network model because any node can be connected to any other node.</p>
-          <img alt="Image of a graph model" src="dist/img/GraphDatabase_PropertyGraph.png" />
-          <p>
-            <small class="credit">
-              Photo credit: Wikimedia
-            </small>
-          </p>
-          <aside class="notes"> Point out edges and nodes</aside>
+          <h3>Pest Tracker DB</h3>
+          <p><b>Relation</b> = data points related to each other are stored in a table.</p>
+          <p><b>Relation</b> = tables are related to each other.</p>
+          <table style="width:100%">
+            <tr>
+              <th>Owner ID</th>
+              <th>First</th>
+              <th>Last</th>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Annye</td>
+              <td>Driscoll</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Zeke</td>
+              <td>McLean</td>
+            </tr>
+          </table>
         </section>
 
-        <section>
-          <h3>Some models... </h3>
-          <p><b>Object-oriented model</b> = database becomes a collection of objects with associated features and methods.</p>
-          <ul>
-            <li><b>Multimedia database</b> = allows for media, such as images.</li>
-            <li><b>Hypertext database</b> = allows any object to link to any other object.</li>
-          </ul>
-        </section>
 
-        <section>
-          <h3>Some models...</h3>
-          <p><b>Entity-relationship model</b> = captures relationships, but isn’t directly tied to the physical structure of the database.</p>
-          <img alt="Image of an ER model" src="dist/img/ER_Model.jpg" />
-          <p>
-            <small class="credit">
-              Photo credit: Lucidchart
-            </small>
-          </p>
-          <aside class="notes">Often used for conceptual design of a database.</aside>
-        </section>
 
     </div>
     <footer>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Part 2: Intro to Databases Design - Girl Develop It</title>
+
+    <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --> <link rel="stylesheet" href="dist/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css">-->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'dist/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h3>Popularity winner</h3>
+          <p><b>Relational database</b> = organizes data into one or more tables of columns and rows with a unique key identifying each row (record).</p>
+          <img alt="Image of an ER model" src="dist/img/Relational_database.svg.png" />
+          <p>
+            <small class="credit">
+              Photo credit: Wikpmedia
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <h3>Pet Tracker DB</h3>
+          <p><b>Relation</b> = data points related to each other are stored in a table.</p>
+          <p><b>Relation</b> = tables are related to each other.</p>
+          <img alt="Example of relations in a database" src="dist/img/RelationExample.JPG" />
+        </section>
+
+        <section>
+          <h3>Relational Data - Why?</h3>
+          <ul>
+            <li>ACID makes it reliable for critical transactional systems.</li>
+            <li>Acts as an all-purpose database.
+              <ul>
+                <li>Older models did not perform well; they encouraged redundant and inaccurate data.</li>
+                <li>Newer models are more specialty - solve a problem in one area but come at a high cost in other areas.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Relational Data - Why?</h3>
+          <ul>
+            <li>A set of rules called the <b>normal forms</b> ensures data redundancy is reduced and data integrity is upheld.</li>
+            <li>The process of applying the normal forms is called <b>normalization</b>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Pet Tracker DB - now in flat form!</h3>
+          <img alt="PetDB in flat form" src="dist/img/PetDBFlatForm.JPG" />
+        </section>
+
+        <section>
+          <h3>Flat Pet Tracker DB</h3>
+          <p>After a couple of additions...</p>
+          <img alt="PetDB in flat form, with mistakes" src="dist/img/FlatFormMistakes.JPG" />
+        </section>
+
+        <section>
+          <h3>Decomposition</h3>
+          <p>= the process of splitting data into tables.</p>
+          <img alt="A decomposition plan for Pet DB" src="dist/img/DecompositionPlan.JPG" />
+        </section>
+
+        <section>
+          <h3>Decomposition - back to the normal forms</h3>
+          <p>If we follow the normal forms when decomposing, then we are guaranteed we will be able to reconstruct the data.</p>
+        </section>
+
+        <section>
+          <h3>Decomposition - First Normal Form</h3>
+          <ul>
+            <li>Eliminate repeating groups in individual tables.</li>
+            <li>Create a separate table for each set of related data.</li>
+            <li>Identify each set of related data with a primary key.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Decomposition - Second Normal Form</h3>
+          <ul>
+            <li>1NF.</li>
+            <li>Every non-prime attribute of the relation is dependent on the whole of every candidate key.</li>
+          </ul>
+          <aside class="notes">Said more simply, all non-key columns are dependent on the table's primary key.</aside>
+        </section>
+
+        <section>
+          <h3>Decomposition - Third Normal Form</h3>
+          <ul>
+            <li>2NF.</li>
+            <li>All the attributes in a table are determined only by the candidate keys of that relation and not by any non-prime attributes.</li>
+          </ul>
+          <aside class="notes">Third normal form = none of the values can be extrapolated from or rely on a secondary field.
+              So imagine a table with three columns - name, birthday, and age. Well age can be easily extrapolated from birthday. If we update the birthday and
+              not the age, we’d have conflicting data. This is a super simple example of a table which does not meet the criteria for third normal form.</aside>
+        </section>
+
+        <section>
+          <h3>Successfully decomposed and normalized!</h3>
+          <img alt="A decomposed Pet DB" src="dist/img/DecomposedPetDB.JPG" />
+        </section>
+
+        <section>
+          <h3>Joins</h3>
+          <p>We put the data back together by <b>joining</b> tables</p>
+          <img alt="A plan to join two tables of the Pet DB" src="dist/img/JoinPlan.JPG" />
+        </section>
+
+        <section>
+          <h3>Joins</h3>
+          <p>Every row in the pet table is matched to a row in the owner table on a certain field</p>
+          <img alt="Two tables ready to join" src="dist/img/ReadyToJoin.JPG" />
+          <p>What is Pets &#10781 Owners on Pet Name = Owner First?</p>
+          <aside class="notes">Explain how to find the join of pets and owners on Pet Name = Owner First.
+            First Find every Owner where Owner First = Robigo, then Owner First = Tabytha, etc.</aside>
+        </section>
+
+        <section>
+          <h3>Joins</h3>
+          <p>The result: Pets &#10781 Owners on Pet Name = Owner First</p>
+          <img alt="An empty table" src="dist/img/EmptyJoinedTable.JPG" />
+          <aside class="notes">Nothing! Nothing is actually relating these two tables yet!</aside>
+        </section>
+
+    </div>
+    <footer>
+      <div class="copyright">
+        Intro to Database Design &mdash; Girl Develop It &mdash;
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+  </div>
+
+    <script src="dist/js/head.min.js"></script>
+    <script src="dist/js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>

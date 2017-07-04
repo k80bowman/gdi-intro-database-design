@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Part 2: Intro to Databases Design - Girl Develop It</title>
+    <title>Part 1: Intro to Databases - Girl Develop It</title>
 
     <meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
     <meta name="author" content="Girl Develop It">
@@ -47,40 +47,55 @@
       <div class="slides">
 
         <section>
-          <h3>Popularity winner</h3>
-          <p><b>Relational database</b> = organizes data into one or more tables of columns and rows with a unique key identifying each row (record).</p>
-          <img alt="Image of an ER model" src="dist/img/Relational_database.svg.png" />
-          <p>
-            <small class="credit">
-              Photo credit: Wikpmedia
-            </small>
-          </p>
+          <h3>Where’s the code?</h3>
+          <p>Different languages have different functions/roles:</p>
+          <ul>
+            <li>Data definition language - used to define and modify data structures
+              <ul><li>CREATE TABLE my_table ( … )</li></ul></li>
+            <li>Data manipulation language - used to create and modify data
+              <ul><li>INSERT INTO my_table VALUES ( .... )</li></ul></li>
+            <li>Query language - used to make queries!
+              <ul><li>SELECT my_column FROM my_table</li></ul></li>
+            <li>Data control language - control access to data
+              <ul><li>REVOKE SELECT ON my_table FROM bad_user</li></ul></li>
+            </li>
+          </ul>
+          <aside class="notes">Examples are in SQL. Different languages will have different roles.</aside>
         </section>
 
         <section>
-          <h3>Pest Tracker DB</h3>
-          <p><b>Relation</b> = data points related to each other are stored in a table.</p>
-          <p><b>Relation</b> = tables are related to each other.</p>
-          <table style="width:100%">
-            <tr>
-              <th>Owner ID</th>
-              <th>First</th>
-              <th>Last</th>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Annye</td>
-              <td>Driscoll</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Zeke</td>
-              <td>McLean</td>
-            </tr>
-          </table>
+          <h3><a href="index.html">With this code I can...</a></h3>
+          <ul>
+            <li>Retrieve data
+              <ul>
+                <li>WHERE Country='Mexico'</li>
+                <li>WHERE Country='Germany' AND City='Berlin'</li>
+                <li>ORDER BY Country</li>
+                <li>SELECT AVG(Price)</li>
+                <li>Including joining tables
+                  <ul>
+                    <li><b>Join</b> = combine rows from two or more tables based on a related column between them</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Insert records, update, and delete records</li>
+            <li>Create databases</li>
+            <li>Create tables</li>
+            <li>Create views and stored procedures
+              <ul>
+                <li><b>Stored procedure</b> =   a block of code created and stored in the database</li>
+              </ul>
+            </li>
+            <li>Set permissions on tables, procedures, and views</li>
+          </ul>
+          <aside class="notes">Verbal example of join.
+
+            A stored procedure is like a function that lives in your database. So if you have a specific procedure you have
+            to repeat over and over, or if multiple people need to use, you can keep a stored procedure. Also like functions, stored
+            procedures can have parameters. So my database at work has a stored procedure which takes a loan number as a parameter,
+            and then moves all of the data for that loan into our archive tables. </aside>
         </section>
-
-
 
     </div>
     <footer>

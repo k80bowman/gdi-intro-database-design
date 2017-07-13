@@ -57,6 +57,7 @@
             <li>Updates to the data!</li>
             <li>Administration of the database!</li>
           </ul>
+          <aside class="notes">Often referred to as "the database".</aside>
         </section>
 
         <section>
@@ -146,11 +147,11 @@
           <p>The internal level of the database architecture + metadata and data structures.</p>
           <aside class="notes">
             includes schemas, tables, queries, views, etc.
+            More than just data - serious optimization happens at the storage/internal level of the database so that the database is fast and efficient when data is requested.
             DBMS allows access to the engine through the UI or possibly through an API so that humans can hit it.
             Availability = more people can access the same piece of data with good performance
             Resiliency = data is backed up in case of a failure
           </aside>
-          <p>Serious optimization happens at the storage/internal level of the database so that the database is fast and efficient when data is requested.</p>
           <br />
           <ul>
             <li><b>Database engine</b> = underlying software a DBMS uses to manipulate the data.</li>
@@ -166,21 +167,29 @@
             <aside class="notes">
               So just like we can give a variable a datatype in programming and only values of that datatype are allowed ot be saved there,
             we can give a field in a database a type and the DBMS will control that.
-            Examples of triggers: every time a new employee is added, create entries for that person in the tax and benefits table.
-              Or before a customer is deleted, confirm they do not have an outstanding order, and prevent the deletion if so.
             </aside>
-            <li>Constraints and triggers allow for complex rules to be applied
-              <ul>
-                <li><b>Constraint</b> = limit the type of data that can go in a table, ensuring accuracy and reliability.
-                  <ul>
-                    <li>Can be column-level or table-level.</li>
-                    <li>examples: Not Null, Unique, Primary Key, Default</li>
-                  </ul>
-                </li>
-                <li><b>Trigger</b> = action (code) that is run automatically in response to a certain event.</li>
-              </ul>
-            </li>
+
           </ul>
+        </section>
+
+        <section>
+          <h3>Data Integrity</h3>
+          <p>Ensuring valid data.</p>
+          <li>Constraints and triggers allow for complex rules to be applied
+            <ul>
+              <li><b>Constraint</b> = limit the type of data that can go in a table, ensuring accuracy and reliability.
+                <ul>
+                  <li>Can be column-level or table-level.</li>
+                  <li>examples: Not Null, Unique, Primary Key, Default</li>
+                </ul>
+              </li>
+              <li><b>Trigger</b> = action (code) that is run automatically in response to a certain event.</li>
+            </ul>
+          </li>
+          <aside class="notes">
+          Examples of triggers: every time a new employee is added, create entries for that person in the tax and benefits table.
+            Or before a customer is deleted, confirm they do not have an outstanding order, and prevent the deletion if so.
+          </aside>
         </section>
 
         <section>
@@ -204,9 +213,8 @@
           <p>Fine-grained record locking prevents queries from blocking others.</p>
           <ul>
             <li>Indexes speed up lookups and joins by magnitudes.
-              <ul>
-                <li><b>Index</b> = data structure that improves the speed of data retrieval at the cost of additional writes and storage space to maintain the index data structure.</li>
-              </ul>
+              <aside class="notes">Index = data structure that improves the speed of data retrieval at the cost of additional writes and storage space to maintain the
+                index data structure.</aside>
             </li>
             <li>Query optimizers find the fastest way to execute your query.</li>
               <ul>
@@ -220,8 +228,7 @@
           <p>People or code may be restricted in what database objects they can control or which computations they can make</p>
           <ul>
             <li><b>Multi-tiered security</b> allows restrictions at the server level, database level, column level, role level, and user level.</li>
-            <li>Databases also often have change and access logs - what was changed, when it was changed, and by whom it was changed.</li>
-            <li>Can use <b>database transactions</b> to increase security.</li>
+            <li>Change and access logs - what was changed, when it was changed, and by whom it was changed.</li>
           </ul>
         </section>
 

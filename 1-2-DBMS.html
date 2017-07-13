@@ -82,7 +82,6 @@
         <section>
           <h3>What does a DBMS do for me?</h3>
           <ul>
-            <li>Levels of data</li>
             <li>Storage</li>
             <li>Data integrity</li>
             <li>Data consistency</li>
@@ -94,57 +93,10 @@
         </section>
 
         <section>
-          <h3>Levels of Data</h3>
-          <p>Three views provided by the DBMS</p>
-          <img alt="Levels of the database" src="dist\img\LevelsOfDBMS.png" />
-          <aside class="notes">
-            External level = How each group of end-users sees the organization of data in the database. Can be any number.
-            Conceptual/logical level = Unifies all of the external views. This is the level you would use to write code against. Only 1.
-            Internal level = Internal organization of data in a DBMS. Only 1.
-          </aside>
-          <!--<ul>
-            <li>External level
-              <ul>
-                <li>How each group of end-users sees the organization of data in the database.</li>
-                <li>Can be any number of these - allows users to see their own businessy ways!</li>
-              </ul>
-            </li>
-            <li>Conceptual/logical level
-              <ul>
-                <li>Unifies all of the external views.</li>
-                <li>If you’re a database application developer, this is the view you would use to write code against</li>
-                <li>Only 1</li>
-              </ul>
-            </li>
-          <li>Internal level
-            <ul>
-              <li>Internal organization of data in a DBMS.</li>
-              <li>Only 1</li>
-            </ul>
-          </li>
-        </ul>-->
-        </section>
-
-        <section>
-          <h3>Data Independence</h3>
-          <p>Changes made at one level do not affect a view at another level.</p>
-          <aside class="notes">
-            So, for example, an end user can change their external view and it doesn’t affect a database application developer’s code at the conceptual level!
-            So you can make physical changes to the database, for optimization for example, without changing the application.
-            If we add some new columns or remove some columns from a table then the user view and programs should not change.
-          </aside>
-          <p>Independence hides the details of the storage structure from user applications.</p>
-          <br />
-          <ul>
-            <li><b>Physical independence</b> = ability to modify the physical schema without causing application programs to be rewritten. </li>
-            <li><b>Logical independence</b> = ability to modify the logical schema without causing application programs to be rewritten.</li>
-          </ul>
-        </section>
-
-        <section>
           <h3>Storage</h3>
           <p>The internal level of the database architecture + metadata and data structures.</p>
           <aside class="notes">
+            internal = bits and bytes, actual storage
             includes schemas, tables, queries, views, etc.
             More than just data - serious optimization happens at the storage/internal level of the database so that the database is fast and efficient when data is requested.
             DBMS allows access to the engine through the UI or possibly through an API so that humans can hit it.
@@ -174,7 +126,6 @@
         <section>
           <h3>Data Integrity</h3>
           <p>Ensuring valid data.</p>
-          <li>Constraints and triggers allow for complex rules to be applied
             <ul>
               <li><b>Constraint</b> = limit the type of data that can go in a table, ensuring accuracy and reliability.
                 <ul>
@@ -198,7 +149,8 @@
             <li>Record locks prevent “dirty” reads or writes.
               <ul>
                 <li><b>Record locking</b> = preventing simultaneous access to data.</li>
-                <aside class="notes">Perfect example of dirty read/write is 2 bank clerks trying to modify 1 bank account. The 1st clerk makes a quick update and saves it.
+                <aside class="notes">Imagine you have a word document on Dropbox - go on with example. In databases, an example would be 2 bank clerks trying to modify 1
+                  bank account. The 1st clerk makes a quick update and saves it.
                   Then the 2nd clerk makes their update and saves it, effectively erasing the first transaction entirely. The solution is to lock the record after the first
                   person retrieves the data, then unlock it once that change is saved.</aside>
               </ul>

@@ -109,18 +109,21 @@
         </section>
 
         <section>
-          <h3>Levels of Data</h3>
+          <h3>Levels of the Database</h3>
           <img alt="Levels of the database" src="dist\img\LevelsOfDBMS.png" />
+          <small class="credit">
+            Photo credit: W3 Schools
+          </small>
           <aside class="notes">
             External level = How each group of end-users sees the organization of data in the database. Can be any number.
-            Conceptual/logical level = Unifies all of the external views. This is the level you would use to write code against. Only 1.
-            Internal level = Internal organization of data in a DBMS. Only 1.
+            Conceptual/logical level = Unifies all of the external views. Fields, relationships, etc. This is the level you would use to write code against. Only 1.
+            Internal level = Internal organization of data in a DBMS. Can get complex data structure info, blocks and bytes, etc. Only 1.
           </aside>
         </section>
 
         <section>
           <h3>Data Independence</h3>
-          <p>Changes made at one level do not affect a view at another level.</p>
+          <p>Changes made at one level do not affect any other level.</p>
           <aside class="notes">
             So, for example, an end user can change their external view and it doesn’t affect a database application developer’s code at the conceptual level!
             So you can make physical changes to the database, for optimization for example, without changing the application.

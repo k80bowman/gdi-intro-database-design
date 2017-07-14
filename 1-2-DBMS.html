@@ -48,7 +48,7 @@
 
         <section>
           <h3>How do I work with a database?</h3>
-          <h5>Use a database management system - a DBMS!</h5>
+          <p>Use a database management system - a DBMS!</p>
           <img alt="Database connected to a DBMS connected to a group of cats" src="dist\img\DBMSCats.JPG" />
         </section>
 
@@ -225,12 +225,25 @@
         </section>
 
         <section>
-          <h3>ACID</h3>
-          <p><b>A</b>tomicity = a transaction must be all or nothing. If one part of a transaction fails, it all fails and the database is left unchanged.</p>
-          <p><b>C</b>onsistency = any transaction will bring the database from one valid state to another; invalid data causes transactions to roll back. Any data must align with all constraints and triggers.</p>
-          <p><b>I</b>solation = concurrent transactions result in the same state as sequential transactions; all transactions are independent! </p>
-          <p><b>D</b>urability = once a transaction is complete, it is permanent - even if the system fails (power loss, crash, etc.).</p>
-          <aside class="notes">These definitions are dense, but the concepts are super easy to describe with simple examples.</aside>
+          <h3><b>A</b>CID</h3>
+          <p>Atomicity = a transaction must be all or nothing. If one part of a transaction fails, it all fails and the database is left unchanged.</p>
+          <aside class="notes">Just want to touch on all of these definitions, then we'll learn them much better with simple examples.</aside>
+        </section>
+
+        <section>
+          <h3>A<b>C</b>ID</h3>
+          <p>Consistency = any transaction will bring the database from one valid state to another; invalid data causes transactions to roll back. Any data must align with all constraints and triggers.</p>
+        </section>
+
+        <section>
+          <h3>AC<b>I</b>D</h3>
+          <p>Isolation = concurrent transactions result in the same state as sequential transactions; all transactions are independent! </p>
+        </section>
+
+        <section>
+          <h3>ACI<b>D</b></h3>
+          <p>Durability = once a transaction is complete, it is permanent - even if the system fails (power loss, crash, etc.).</p>
+          <img alt="A cat in armor" src="dist\img\DurableCat.jpg" />
         </section>
 
         <section>
@@ -276,6 +289,7 @@
 
         <section>
           <h3>"The database"</h3>
+          <img alt="A surprised looking cat in a suit and tie" src="dist\img\FormalCat.JPG" />
         </section>
 
         <section>

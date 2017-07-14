@@ -49,18 +49,18 @@
         <section>
           <h3>How do I work with a database?</h3>
           <h5>Use a database management system - a DBMS!</h5>
-          <img alt="Database connected to a DBMS connected to a group of cats" src="\dist\img\DBMSCats.JPG" />
+          <img alt="Database connected to a DBMS connected to a group of cats" src="dist\img\DBMSCats.JPG" />
         </section>
 
         <section>
-          <h3>How do I work with a database?</h3>
+          <h3>A DBMS...</h3>
           <ul>
             <li>Connects the data, the user, and other applications.</li>
-            <li>Definition of the database!</li>
-            <li>Creation of the database!</li>
-            <li>Queries of the data!</li>
-            <li>Updates to the data!</li>
-            <li>Administration of the database!</li>
+            <li>Can define the database!</li>
+            <li>Can create the database!</li>
+            <li>Queries the data!</li>
+            <li>Updates the data!</li>
+            <li>Administrates the database!</li>
           </ul>
         </section>
 
@@ -135,7 +135,7 @@
               <li><b>Constraint</b> = limit the type of data that can go in a table, ensuring accuracy and reliability.
                 <ul>
                   <li>Can be column-level or table-level.</li>
-                  <li>examples: Not Null, Unique, Primary Key, Default</li>
+                  <li>Not Null, Unique, Default</li>
                 </ul>
               </li>
               <li><b>Trigger</b> = action (code) that is run automatically in response to a certain event.</li>
@@ -151,15 +151,20 @@
           <h3>Data Consistency</h3>
           <p>Ensuring the database is in a valid state.</p>
           <ul>
-            <li>Record locks prevent “dirty” reads or writes.
-              <ul>
-                <li><b>Record locking</b> = preventing simultaneous access to data.</li>
-                <aside class="notes">Imagine you have a word document on Dropbox - go on with example. In databases, an example would be 2 bank clerks trying to modify 1
-                  bank account. The 1st clerk makes a quick update and saves it.
-                  Then the 2nd clerk makes their update and saves it, effectively erasing the first transaction entirely. The solution is to lock the record after the first
-                  person retrieves the data, then unlock it once that change is saved.</aside>
-              </ul>
-            </li>
+            <li><b>Record locking</b> = preventing simultaneous access to data.</li>
+            <li>Record locks prevent “dirty” reads or writes.</li>
+          </ul>
+          <img alt="A cat cleaning the screen of a computer" src="dist\img\CatCleaning.jpg" />
+          <aside class="notes">Imagine you have a word document on Dropbox - go on with example. In databases, an example would be 2 bank clerks trying to modify 1
+            bank account. The 1st clerk makes a quick update and saves it.
+            Then the 2nd clerk makes their update and saves it, effectively erasing the first transaction entirely. The solution is to lock the record after the first
+            person retrieves the data, then unlock it once that change is saved.</aside>
+        </section>
+
+        <section>
+          <h3>Data Consistency</h3>
+          <p>Ensuring the database is in a valid state.</p>
+          <ul>
             <li><b>Commit and rollback</b> mechanisms ensure transactions are either fully completed or fully rolled back.</li>
           </ul>
         </section>

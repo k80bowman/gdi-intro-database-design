@@ -222,9 +222,7 @@
           <h3>Primary Key Candidate</h3>
           <img alt="Pet DB functional dependency" src="dist/img/PetDBFunctionalDependency.JPG" />
           <p>Every time I see a particular Owner First + Pet Name, I expect to get back the same Pet Birthday, Pet Color, and Pet Skill.</p>
-          <p>Does the reverse hold true?</p>
-          <aside class="notes">No, functional dependency is a one-way street. Pets could have identical birthdays, colors, and skills, but
-            have a different name and/or owner. The same person having two identical pets, including name, is not a valid business case in this situation.</aside>
+          <aside class="notes">The same person having two identical pets, including name, is not a valid business case in this situation.</aside>
         </section>
 
         <section>
@@ -241,7 +239,7 @@
           <h3>Primary Key Candidate</h3>
           <img alt="Names not working for PK" src="dist/img/NamesNotGoodKeys.JPG" />
           <p>PKs must be unique within the table - for this reason, names make poor PKs.</p>
-          <aside class="notes">It’s easy to see how a in a table like this, it may be tough or impossible to find a foreign key.</aside>
+          <aside class="notes">It’s easy to see how a in a table like this, it may be tough or impossible to find a key.</aside>
         </section>
 
         <section>
@@ -415,7 +413,7 @@
             <li>Often called logical database design; output is a logical data model.</li>
             <li>The logical data model is specific to the chosen database model and DBMS - we’re getting real and technical, at this point.</li>
           </ul>
-          <aside class="notes">NEED MORE DETAIL HERE</aside>
+          <aside class="notes">Getting a little more technical - basically choose your database model and your DBMS.</aside>
         </section>
 
         <section>

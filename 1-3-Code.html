@@ -67,64 +67,49 @@
         <section>
           <h3>Jobs for code in databases</h3>
           <p>Data manipulation language - used to create and modify data.</p>
-              <ul><li>INSERT INTO my_table VALUES ( .... )</li></ul>
+              <ul>
+                <li>INSERT INTO my_table VALUES ( .... )</li>
+                <li>UPDATE my_table SET column1 = value1, column2 = value2, ... </li>
+                <li>DELETE FROM my_table WHERE ...</li>
+              </ul>
         </section>
 
         <section>
           <h3>Jobs for code in databases</h3>
           <p>Query language - used to make queries!</p>
-              <ul><li>SELECT my_column FROM my_table</li></ul>
+              <ul>
+                <li>SELECT my_column FROM my_table</li>
+              <li>...WHERE Country='Mexico'</li>
+              <li>...WHERE Country='Germany' AND City='Berlin'</li>
+              <li>...ORDER BY Country</li>
+              <li>SELECT AVG(Price)</li>
+              </ul>
         </section>
 
         <section>
           <h3>Jobs for code in databases</h3>
-          <p>Data control language - control access to data.</p>
+          <p>Data control language - control access to data/views/etc.</p>
               <ul><li>REVOKE SELECT ON my_table FROM bad_user</li></ul>
         </section>
 
         <section>
-          <h3>With this code I can...</h3>
-            <p>Retrieve data</p>
-              <ul>
-                <li>WHERE Country='Mexico'</li>
-                <li>WHERE Country='Germany' AND City='Berlin'</li>
-                <li>ORDER BY Country</li>
-                <li>SELECT AVG(Price)</li>
-              </ul>
-            </section>
-
-            <section>
-              <h3>With this code I can...</h3>
-              <ul>
-                <li>Insert records</li>
-                <li>Update records</li>
-                <li>Delete records</li>
-            </ul>
-          </section>
+          <h3>Jobs for code in databases</h3>
+          <ul>
+            <li>Data definition language</li>
+            <li>Data manipulation language</li>
+            <li>Query language</li>
+            <li>Data control language</li>
+          </ul>
+        </section>
 
           <section>
-            <h3>With this code I can...</h3>
-            <ul>
-            <li>Create databases</li>
-            <li>Create tables</li>
-            <li>Create views and stored procedures
-              <ul>
-                <li><b>Stored procedure</b> =   a block of code created and stored in the database</li>
-              </ul>
-            </li>
-          </ul>
+            <h3>Stored procedure</h3>
+            <p>= a block of code created and stored in the database</p>
           <aside class="notes">
             A stored procedure is like a function that lives in your database. So if you have a specific procedure you have
             to repeat over and over, or if multiple people need to use, you can keep a stored procedure. Also like functions, stored
             procedures can have parameters. So my database at work has a stored procedure which takes a loan number as a parameter,
             and then moves all of the data for that loan into our archive tables. </aside>
-        </section>
-
-        <section>
-          <h3>With this code I can...</h3>
-          <ul>
-            <li>Set permissions on tables, procedures, and views</li>
-          </ul>
         </section>
 
         <section>
